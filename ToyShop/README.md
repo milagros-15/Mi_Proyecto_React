@@ -1,3 +1,4 @@
+
 ## 📚 Sobre el proyecto
 
 * Este proyecto corresponde al primer trabajo final evaluativo de la Diplomatura en Programación FullStack utilizando React en Visual Studio Code.
@@ -13,6 +14,7 @@
 
 * Clonar el repositorio:
 
+    
     git clone https://github.com/milagros-15/Mi_Proyecto_React.git
 
 * Abrir el proyecto en Visual Studio Code
