@@ -1,0 +1,206 @@
+.cardsContainer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+
+    .card {
+        position: relative;
+        width: 280px;
+        height: 350px;
+        background-color: $color5;
+        aspect-ratio: 3/4;
+
+        box-shadow: .4rem .4rem 0 #342e56;
+        border-radius: 4px;
+        border: 0.15rem solid hsl(249,30%,26%);
+        overflow: hidden;
+
+        background-image: radial-gradient( #342e56 28%,transparent 28%),radial-gradient(hsl(249,30%,26%) 28%,transparent 28%);
+        background-position: 0px 0px, 3px 3px;
+        background-size: 6px 6px, 6px 6px;
+        border-left: 0.15rem solid #342e56;
+        // background: $color3;
+
+        @include notebook(){
+            width: 260px;
+            height: 340px;
+        }
+
+        @include tablets(){
+            width: 90%;
+            height: 200px;
+        }
+
+        .containerContenido{
+            position: relative;
+            border-right: 2px solid #08070a;
+            border-bottom: 2px solid #03010d;
+            top: 0; 
+            left: 0;
+            width: calc(100% - 15px);
+            height: calc(100% - 15px);
+            border-radius: 0 0 5px 0;
+            overflow: hidden;
+
+            .cardImg{
+                background-color: $color5;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+
+                @include tablets(){
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: flex-start;
+                }
+
+                .imgCard {
+                    width: 90%;
+                    // height: 90%;
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+
+                    @include tablets(){
+                        padding: 10px;
+                        height: 100%;
+                        width: 50%;
+                    }
+                }
+                .precioCard{
+                    position: absolute;
+                    display: block;
+                    top: 5px;
+                    left: 5px;
+                    width: 60px;
+                    height: 60px;
+                    background: $color3;
+                    border-radius: 100%;
+                    @include align_mid_grid();
+                    font-weight: 600;
+                    color: $color6;
+                    font-size: 1rem;
+                    overflow: hidden;
+
+                    @include tablets(){
+                        height: 40px;
+                        width: 40px;
+                        font-size: .8rem;
+                    }
+                    
+                }
+            }
+            
+            .cardDescripcion{
+                position: absolute;
+                bottom: -150px;
+                left: 0;
+                width: 100%;
+                height: 140px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-content: center;
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+
+                background: rgba(224, 223, 228, 0.527);
+                box-shadow: 0 8px 32px 0 rgba(118, 120, 156, 0.37);
+                backdrop-filter: blur( 0px );
+                -webkit-backdrop-filter: blur( 0px );
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+                overflow: hidden;
+                overflow-y: auto;
+                transition: .7s ease-out;
+
+                cursor: pointer;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                @include tablets(){
+                    width: 50%;
+                    left: auto;
+                    right: 0;
+                    bottom: 0;
+                    height: 135px;
+                    border:none;
+                    border-radius: 4px 0 0 0;
+                }
+
+                &:hover{
+                    background: rgba(126, 108, 192, 0.938);
+                    box-shadow: 0 8px 32px 0 rgba(159, 161, 178, 0.37);
+                    backdrop-filter: blur( 5.5px );
+                    -webkit-backdrop-filter: blur( 5.5px );
+                    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+                    @include tablets(){
+                        border: none;
+                    }
+                }
+                
+                
+                h2{
+                    color: $color3;
+                    font-family: $tituloGeneral;
+                    text-transform: capitalize;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+
+                    @include tablets(){
+                        font-size: 1.2rem;
+                    }
+                }
+                p{
+                    color: $color2;
+                    font-family: $parrafoGeneral;
+                    font-size: 1rem;
+                    font-weight: 400;
+
+                    @include tablets(){
+                        font-size: .9rem;
+                    }
+                }
+                
+            }
+
+            &:hover {
+
+                .cardDescripcion{
+                    bottom: 0px;
+                }
+            }
+        }
+    }
+
+    .sinProds{
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        border: solid 2px $color3;
+        border-radius: 2px;
+        
+        h2{
+            font-family: $tituloGeneral;
+            font-size: 2.5rem;
+            color: $color2;
+        }
+    }
+}

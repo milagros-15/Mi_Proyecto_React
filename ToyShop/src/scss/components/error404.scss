@@ -1,0 +1,34 @@
+.main {
+  height: calc(100vh - 320px);
+  position: relative;
+
+  .errorGen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $color8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  
+    h2{
+      font-family: $tituloGeneral;
+      font-size: 4rem;
+      padding: 1.2rem;
+      font-weight: 700;
+      color: $color2;
+      text-transform: capitalize;
+    }
+    p{
+      font-family: $parrafoGeneral;
+      color: $color5;
+      font-size: 1.5rem;
+      padding: 1rem;
+      font-weight: 900;
+      text-transform: capitalize;
+    }
+  }
+
+}

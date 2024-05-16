@@ -1,0 +1,52 @@
+.toggle {
+    display: none;
+    cursor: pointer;
+    
+    @include notebook(){
+        display: block;
+        width: 60px;
+        height: 80px;
+        transition: .7s;
+
+        @include align_mid_grid();
+
+        span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            border-radius: 100px;
+            background: $color5;
+            transition: all .4s ease-in-out;
+
+            &:not(:last-child){//:last-child de CSS representa el último elemento entre un grupo de elementos hermanos.
+                margin-bottom: 7px;
+            }
+
+        }
+    }
+
+    &.active{
+        transition-delay: .5s;
+
+        span{
+            background: $color4;
+            transition: .5s;
+        }
+        span{
+            &:nth-child(2){
+                width: 0;
+            }
+            &:nth-child(1),&:nth-child(3){
+                transition-delay: .5s;
+            }
+            &:nth-child(1){
+                rotate: 45deg;
+                transform: translate(7px,7px);
+            }
+            &:nth-child(3){
+                rotate: -45deg;
+                transform: translate(7px,-7px);
+            }
+        }
+    }
+}

@@ -1,0 +1,500 @@
+.itemDetailContain {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+
+    @include tablets() {
+        height: 900px;
+        flex-direction: column;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .containerImgs {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        %hereding_mid {
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            padding: 5px;
+        }
+
+        .img1,.img2,.img3,.img4,.img5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .img1 {
+            width: 100%;
+            height: 80%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                @extend %hereding_mid;
+            }
+        }
+
+        .imgSecundary {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 5px;
+
+            .img1, .img2, .img3, .img4,.img5{
+                padding: 5px;
+            }
+
+
+            .img2, .img3,.img4,.img5 {
+                height: 100%;
+
+                img {
+                    height: 70%;
+                    @extend %hereding_mid;
+                }
+            }
+        }
+
+
+    }
+
+    @include tablets() {
+        .containerImgs {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 5px;
+
+            %hereding_mid {
+                aspect-ratio: 1/1;
+                object-fit: contain;
+            }
+
+            .img1 {
+
+                img {
+                    @extend %hereding_mid;
+                }
+            }
+
+            .imgSecundary {
+                width: 30%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                gap: 5px;
+
+
+                .img2, .img3, .img4, .img5 {
+                    height: 150px;
+                    width: 100%;
+
+                    img {
+                        width: 70%;
+                        @extend %hereding_mid;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .detalle {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+
+        .nombre {
+            font-family: $tituloGeneral;
+            text-transform: uppercase;
+            font-size: 2rem;
+            color: $color3;
+            font-weight: 500;
+
+            @include notebook() {
+                font-size: 1.5rem;
+            }
+        }
+
+        .descripcion {
+            font-family: $parrafoGeneral;
+            font-size: 1rem;
+            color: $color5;
+            font-weight: 600;
+            overflow: hidden;
+            overflow-y: auto;
+            
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            @include notebook() {
+                font-size: 1rem;
+            }
+        }
+
+        .precio {
+            font-family: $parrafoGeneral;
+            font-size: 1.8rem;
+            color: $color4;
+            font-weight: 700;
+
+            @include notebook() {
+                font-size: 1.4rem;
+            }
+        }
+
+        .categoria {
+            color: $color3;
+            font-family: $parrafoGeneral;
+            text-transform: capitalize;
+            font-size: 1rem;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            gap: 10px;
+
+            strong {
+                font-family: $tituloGeneral;
+                text-transform: capitalize;
+                font-size: 1rem;
+                color: $color5;
+                font-weight: 500
+            }
+
+        }
+
+        .palabraClave {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            justify-content: flex-start;
+            gap: 10px;
+            width: 90%;
+
+            a {
+                text-decoration: none;
+                background: $color3;
+                color: $color6;
+                font-weight: 700;
+                font-family: $parrafoGeneral;
+                font-size: 1.1rem;
+                padding: 4px;
+                cursor: pointer;
+                border-radius: 2px;
+                transition: .5s;
+
+                @include notebook() {
+                    font-size: 1rem;
+                    padding: 4px;
+                }
+
+                &:hover {
+                    background: $color4;
+                    color: $color6;
+                }
+            }
+        }
+
+        .formCantidad {
+            width: 250px;
+            height: auto;
+            padding: 0px;
+            color: $color3;
+            font-family: $tituloGeneral;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            @include notebook() {
+                font-size: 1rem;
+
+            }
+
+            .labelCantidad {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                align-items: center;
+                gap: 10px;
+                outline: 0;
+
+                p {
+                    color: $color3;
+                    font-family: $tituloGeneral;
+                    text-transform: capitalize;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+
+                    @include notebook() {
+                        font-size: 1rem;
+
+                    }
+                }
+
+                .botonesCantidad {
+                    height: 100%;
+                    width: auto;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+
+                    .restProd,
+                    .sumProd {
+                        font-size: 1.5rem;
+                        transition: .5s;
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: center;
+                        padding: 5px;
+
+
+                        @include notebook() {
+                            font-size: 1rem;
+                        }
+
+                        &:hover {
+                            color: $color4;
+                        }
+                    }
+                    p{
+                        font-size: 1.2rem;
+                        padding: 5px;
+
+                    }
+                }
+
+                .inputCantidad {
+                    padding: 2px;
+                    background: $color1a;
+                    color: $color3;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    text-align: center;
+                    border: 1px solid $color3;
+                    border-radius: 2px;
+                    cursor: pointer;
+
+                    @include notebook() {
+                        font-size: 1rem;
+                    }
+
+                    &::-webkit-inner-spin-button,
+                    &::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    &:focus {
+                        outline: 0;
+                    }
+
+                }
+            }
+
+            button {
+                background: $color3;
+                border: none;
+                border-radius: 2px;
+                font-family: $tituloGeneral;
+                padding: 8px;
+                font-size: 1.1rem;
+                transition: .5s;
+                cursor: pointer;
+                text-transform: capitalize;
+                font-weight: 500;
+                color: $color1a;
+
+                @include notebook() {
+                    font-size: 1rem;
+                }
+
+                &:hover {
+                    background: $color4;
+                    color: $color6;
+                }
+            }
+        }
+
+        .botonRedireccion {
+            width: 100%;
+            height: auto;
+            display: flex;
+            gap: 10px;
+
+            a {
+                text-decoration: none;
+                background: $color3;
+                border: none;
+                border-radius: 2px;
+                font-family: $tituloGeneral;
+                padding: 8px;
+                font-size: 1.1rem;
+                transition: .5s;
+                cursor: pointer;
+                text-transform: capitalize;
+                font-weight: 500;
+                color: $color1a;
+
+                @include notebook() {
+                    font-size: 1rem;
+                }
+
+                &:hover {
+                    background: $color4;
+                    color: $color6;
+                }
+            }
+        }
+    }
+
+    @include tablets() {
+        .detalle {
+            height: 50%;
+            width: 98%;
+            display: flex;
+            gap: 8px;
+
+            .nombre {
+                display: block;
+                font-size: 1.5rem;
+            }
+
+            .descripcion {
+                font-size: .9rem;
+                font-weight: 500;
+                height: 60px;
+                overflow: hidden;
+                overflow-y: auto;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .precio {
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+
+            .categoria {
+                font-size: .9rem;
+
+                strong {
+                    font-size: .9rem;
+                    font-weight: 500
+                }
+
+            }
+
+            .palabraClave {
+                gap: 10px;
+                width: 100%;
+
+                a {
+                    font-size: .9rem;
+                }
+            }
+
+            .formCantidad {
+                width: 250px;
+                font-size: 1rem;
+
+
+                .labelCantidad {
+
+                    p {
+                        font-size: .9rem;
+                    }
+
+                    .botonesCantidad {
+                        font-size: 1rem;
+                        font-weight: 500;
+
+                        .restProd,
+                        .sumProd {
+                            font-size: 1rem;
+                            transition: .5s;
+
+                            &:hover {
+                                color: $color4;
+                            }
+                        }
+                    }
+
+                    .inputCantidad {
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+                }
+
+                button {
+                    padding: 4px;
+                    font-size: .9rem;
+                }
+            }
+
+            .botonRedireccion {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+
+                a {
+
+                    padding: 4px;
+                    font-size: .9rem;
+                    transition: .5s;
+
+                }
+            }
+        }
+
+
+    }
+}

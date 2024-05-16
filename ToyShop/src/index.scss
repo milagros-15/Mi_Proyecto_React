@@ -1,0 +1,36 @@
+@import './scss/utilities/functions';
+@import './scss/utilities/variables';
+@import './scss/utilities/mixins';
+@import './scss/utilities/maps';
+
+// base
+@import './scss/base/fonts';
+@import './scss/base/reset';
+
+// views
+@import './scss/views/home';
+
+// layout
+@import './scss/layout/header';
+@import './scss/layout/main';
+
+@import './scss/components/navBar.scss';
+@import './scss/components/toggle.scss';
+@import './scss/components/itemListContainer.scss';
+@import './scss/components/loading.scss';
+@import './scss/components/cardProducto.scss';
+@import './scss/components/botoneraCard.scss';
+@import './scss/components/itemDetail.scss';
+@import './scss/components/cartContainer.scss';
+@import './scss/components/formPushProduct.scss';
+@import './scss/components/likeContainer.scss';
+@import '../src/components/SimpleSlider/slick.scss';
+@import '../src/components/SimpleSlider/slick-theme.scss';
+@import './scss/components/simpleSlider.scss';
+
+
+@import './scss/components/error404.scss';
+
+@import './scss/components/TiketCompra.scss';
+
+@import './scss/layout/footer';

@@ -1,0 +1,635 @@
+.cartContainer {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+
+    .linkComprar {
+        font-family: $tituloGeneral;
+        color: $color3;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .containCarrito {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h1 {
+            font-family: $tituloGeneral;
+            font-size: 2rem;
+            text-transform: capitalize;
+            color: $color5;
+        }
+
+        .botonraCompra {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            align-content: center;
+            gap: 10px;
+
+            .vaciar {
+                width: auto;
+                height: 40px;
+                background: $color6;
+                color: $color4;
+
+                border: none;
+                border-radius: 2px;
+                font-family: $tituloGeneral;
+                font-size: 1rem;
+                transition: .5s;
+                cursor: pointer;
+                text-transform: capitalize;
+                font-weight: 500;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                padding: 0 10px;
+                gap: 5px;
+
+                &:hover {
+                    background: $color4;
+                    color: $color6;
+                }
+            }
+
+            .userNoLogin {
+                display: block;
+                width: auto;
+                font-family: $parrafoGeneral;
+                font-weight: 500;
+                color: $color8;
+                font-size: 1.5rem;
+                text-transform: capitalize;
+            }
+        }
+
+        .carrito {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .cartProducto {
+                position: relative;
+                width: 99%;
+                height: 200px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-start;
+                align-items: center;
+
+
+                box-shadow: .4rem .4rem 0 #8173c7;
+                border-radius: 4px;
+                border: 3px solid #514e5f;
+                overflow: hidden;
+
+                background-image: radial-gradient(#342e56 28%, transparent 28%), radial-gradient(#342e56 28%, transparent 28%);
+                background-position: 0px 0px, 5px 5px;
+                background-size: 10px 10px, 10px 10px;
+                border-left: 3px solid #342e56;
+                gap: 10px;
+
+                @include notebook() {
+                    height: 300px;
+                }
+
+                .conteinProd {
+                    width: 90%;
+                    height: 100%;
+                    background: $color1a;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px;
+
+                    .contImagen {
+                        width: 25%;
+                        height: 100%;
+                        border-radius: 3px;
+                        overflow: hidden;
+                        display: flex;
+                        align-content: center;
+                        justify-content: center;
+                        aspect-ratio: 1/1;
+
+                        @include notebook() {
+                            width: 30%;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            aspect-ratio: 1/1;
+                            padding: 10px;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .containDescripcion {
+                        width: 75%;
+                        height: 100%;
+                        display: flex;
+                        align-content: center;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                        flex-direction: row;
+                        gap: 5px;
+
+                        @include notebook() {
+                            width: 70%;
+                            height: 100%;
+                            flex-direction: column-reverse;
+                            text-align: center;
+                        }
+
+                        .descripcion {
+                            width: 600px;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            align-content: flex-start;
+                            flex-wrap: nowrap;
+                            gap: 12px;
+
+                            @include notebook() {
+                                width: 100%;
+                                height: 50%;
+                                overflow: hidden;
+                                align-items: center;
+                            }
+
+                            h2 {
+                                color: $color3;
+                                font-weight: 1.2rem;
+                                font-family: $tituloGeneral;
+                                text-transform: capitalize;
+
+                                @include notebook() {
+                                    font-size: 1.1rem;
+                                }
+                            }
+
+                            p {
+                                font-family: $parrafoGeneral;
+                                font-size: 1rem;
+                                color: $color5;
+                                height: 50px;
+                                overflow: hidden;
+                                overflow-y: auto;
+
+                                &::-webkit-scrollbar {
+                                    display: none;
+                                }
+
+                                @include notebook() {
+                                    height: 50px;
+                                    overflow: hidden;
+                                    overflow-y: auto;
+                                    font-size: .9rem;
+                                }
+                            }
+
+                            .remove {
+                                width: 80px;
+                                height: 35px;
+                                background: $color6;
+                                color: $color4;
+                                border: none;
+                                border-radius: 3px;
+                                font-family: $tituloGeneral;
+                                font-size: .9rem;
+                                transition: .5s;
+                                cursor: pointer;
+                                text-transform: capitalize;
+                                font-weight: 500;
+
+                                &:hover {
+                                    background: $color4;
+                                    color: $color6;
+                                }
+                            }
+                        }
+
+                        .formProds {
+                            height: 100%;
+                            width: 140px;
+                            display: flex;
+                            font-size: 1.2rem;
+                            font-weight: 500;
+                            color: $color3;
+                            font-family: $tituloGeneral;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            align-content: center;
+
+                            @include notebook() {
+                                width: 100%;
+                                height: 40px;
+                                font-size: 1.1rem;
+                            }
+
+                            .sumaResta {
+                                width: 100%;
+                                height: 50px;
+                                overflow: hidden;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                align-content: center;
+                                flex-wrap: nowrap;
+                                gap: 10px;
+
+                                .restaProd,
+                                .sumaProd {
+                                    height: auto;
+                                    width: auto;
+                                    background: $color6;
+                                    color: $color4;
+                                    border: none;
+                                    padding: 5px;
+                                    border-radius: 2px;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    align-content: center;
+                                    justify-content: center;
+                                    flex-wrap: nowrap;
+                                    gap: 10px;
+                                    transition: .5s;
+
+                                    &:hover {
+                                        color: $color6;
+                                        background: $color4;
+                                    }
+
+                                }
+
+                                p {
+                                    @include notebook() {
+                                        font-size: 1.1rem;
+                                    }
+                                }
+
+                            }
+
+                        }
+
+                        .precio {
+                            height: 100%;
+                            width: 90px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            align-content: center;
+
+                            @include notebook() {
+                                width: 100%;
+                                height: 40px;
+                            }
+
+                            p {
+                                font-family: $parrafoGeneral;
+                                color: $color3;
+                                font-size: 1.2rem;
+                                font-weight: 600;
+
+                                @include notebook() {
+                                    font-size: 1.1rem;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+
+    .cartVacio {
+        width: 100%;
+        height: calc(100vh - 200px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        h2 {
+            font-family: $tituloGeneral;
+            text-transform: capitalize;
+            font-size: 2rem;
+            color: $color3;
+        }
+    }
+
+}
+
+.modal {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    @include notebook() {
+        width: 100%;
+        height: auto;
+    }
+
+    @include tablets() {
+        width: 100%;
+    }
+
+    .container {
+        position: relative;
+        width: 90%;
+        height: 90%;
+        border-radius: 2px;
+        background: $color6;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: 15px;
+
+        @include notebook(){
+            flex-direction: column;
+            width: 98%;
+        }
+
+        .summaryPurchase {
+            width: 50%;
+            height: 300px;
+            border: solid 3px $color3;
+            padding: 15px;
+            border-radius: 2px;
+
+            @include notebook(){
+                width: 100%;
+            }
+
+            .containSummaryPurchase{
+                background: $color3;
+                width: 100%;
+                height: 100%;
+                border-radius: 2px;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                align-content: center;
+                padding: 30px;
+                gap: 10px;
+
+                h2 {
+                    font-family: $tituloGeneral;
+                    font-weight: 600;
+                    font-size: 1.7rem;
+                    text-transform: capitalize;
+                    color: $color6;
+                    padding: 15px 0;
+                }
+                p{
+                    width: 100%;
+                    font-family: $parrafoGeneral;
+                    text-transform: capitalize;
+                    font-size: 1.2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-content: center;
+
+                    &.total{
+                        border-top: 4px solid $color5;
+                        padding: 15px 0;
+                    }
+                }
+            }
+
+        }
+
+        .paymentMethod {
+            width: 50%;
+            height: auto;
+            border: solid 3px $color3;
+            padding: 15px;
+            border-radius: 2px;
+
+            @include notebook(){
+                width: 100%;
+            }
+
+            .containPaymentMethod{
+                background: $color3;
+                width: 100%;
+                height: 100%;
+                border-radius: 2px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                align-content: center;
+                padding: 30px;
+                gap: 10px;
+
+                h2 {
+                    font-family: $tituloGeneral;
+                    font-weight: 600;
+                    font-size: 1.7rem;
+                    text-transform: capitalize;
+                    color: $color6;
+                    padding: 15px 0;
+                }
+                label{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    font-family: $tituloGeneral;
+                    font-size: 1.2rem;
+                    text-transform: capitalize;
+                    gap: 5px;
+
+                    .emailUs{
+                        width: 100%;
+                        border: solid 1px $color1a;
+                        font-family: $parrafoGeneral;
+                        font-weight: 700;
+                        border-radius: 2px;
+                        color: $color1a;
+                        text-transform: none;
+                        background: $color2;
+                        padding: 5px;
+                        font-size: 1rem;
+                        overflow: hidden;
+                    }
+
+                    input{
+                        width: 100%;
+                        padding: 10px;
+                        border-radius: 2px;
+                        outline: none;
+                        font-family: $parrafoGeneral;
+                        font-weight: 600;
+                        color: $color1a;
+                        font-size: 1rem;
+                        padding: 5px 10px;
+                        border: solid 2px $color1a;
+
+                        &::placeholder{
+                            font-family: $parrafoGeneral;
+                            font-weight: 500;
+                            text-transform: capitalize;
+                            color: $color5;
+                        }
+                    
+                    }
+
+                    .errorForm{
+                        font-family: $parrafoGeneral;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: $color8;
+                    }
+                }
+                .expired{
+                    width: 100%;
+                    display: flex;
+                    gap: 10px;
+                    
+                    label{
+                        width: 25%;
+
+                        &.labelExpired{
+                            width: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            
+                            .datosCardC{
+                                width: 100%;
+                                display: flex;
+                                gap: 10px;
+
+                                .monthExpiration,
+                                .yearExpiration{
+                                    width: 50%;
+                                    height: auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    flex-wrap: nowrap;
+                                    align-content: center;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    gap: 5px;
+                                
+                                    input{
+                                        width: 100%;
+                                    }
+                                    p{
+                                        width: 100%;
+                                    }
+                                }
+
+                            }
+                            
+                        }
+                    }
+                    
+                }
+                .entrar{
+                    font-family: $tituloGeneral;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: $color4;
+                    background: $color6;
+                    text-transform: capitalize;
+                    padding: 8px 12px;
+                    border-radius: 2px;
+                    transition: .5s;
+                    outline: none;
+                    border: none;
+    
+                    &:hover {
+                        color: $color6;
+                        background: $color4;
+                    }
+                }
+                .error, .verificado{
+                    background: $color6;
+                    width: 100%;
+                    padding: 8px;
+                    font-family: $parrafoGeneral;
+                    color: $color8;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    border-radius: 2px;
+                    font-size: 1rem;
+                }
+                .verificado{
+                    color: $color3;
+                }
+            }
+        }
+
+        .closeModal {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 5px;
+            right: 5px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $color4;
+            border: solid 2px $color4;
+            border-radius: 50%;
+            background: $color6;
+        }
+    }
+}

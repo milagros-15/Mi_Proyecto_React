@@ -1,0 +1,615 @@
+.navBar {
+    position: fixed;
+    height: 140px;
+    @include anchoGeneral();
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    background: $color1a;
+    padding-bottom: 10px;
+    z-index: 2;
+
+    .menuSuperior {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        background: $color1a;
+        z-index: 2;
+
+        @include notebook() {
+            justify-content: space-between;
+
+        }
+
+        .contenedorLogo {
+            position: relative;
+            width: auto;
+            height: 80px;
+            margin-left: 10px;
+            background: $color1a;
+            @include align_mid_flex();
+            gap: 10px;
+
+            @include notebook() {
+                margin-left: 0;
+            }
+
+            .logotipo {
+                display: block;
+                width: 60px;
+                height: 60px;
+                background: $color3;
+                padding: 5px;
+                border-radius: 50%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            span {
+                font-family: $tituloGeneral;
+                font-size: 1.2rem;
+                text-transform: capitalize;
+                color: $color3;
+                font-weight: 600;
+            }
+        }
+
+        .menuAndCar {
+            position: relative;
+            width: auto;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+            gap: 10px;
+
+            @include notebook() {
+                position: absolute;
+                width: 100%;
+                height: auto;
+                top: 145px;
+                justify-content: center;
+                align-items: flex-end;
+                align-content: center;
+                flex-wrap: wrap;
+            }
+
+            .listMenu {
+                position: relative;
+                list-style: none;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 10px;
+
+                @include notebook() {
+
+                    flex-direction: column;
+
+                }
+
+                li {
+                    position: relative;
+                    height: 100%;
+                    @include align_mid_flex();
+
+                    a {
+                        position: relative;
+                        text-decoration: none;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        min-width: 100px;
+                        width: 120px;
+                        height: 50px;
+                        text-align: center;
+                        text-decoration: none;
+                        font-family: $tituloGeneral;
+                        text-transform: capitalize;
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                        gap: 5px;
+
+                        cursor: pointer;
+                        transition: all .5s ease;
+                        position: relative;
+                        outline: none;
+                        border-radius: 2px;
+                        z-index: 0;
+                        overflow: hidden;
+                        color: $color3;
+
+                        &:hover {
+                            color: #493b3b;
+
+                            &:after {
+                                height: 100%;
+                            }
+                        }
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            z-index: -1;
+                            transition: all .5s ease;
+                            left: 0;
+                            bottom: 0;
+                            height: 0;
+                            width: 100%;
+                            background: #9e979907;
+                        }
+
+                        &.rutaActiva {
+                            transition: all .5s ease;
+                            background: #a5b9af;
+                            color: $color1a;
+                        }
+                    }
+
+                    &.listConSubMenu {
+                        position: relative;
+                        width: 120px;
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        gap: 10px;
+
+                        .subMenuCategoria {
+                            opacity: 0;
+                            transition: opacity .5s;
+                            display: none;
+                        }
+
+                        &:hover {
+                            .subMenuCategoria {
+                                position: absolute;
+                                opacity: 1;
+                                background: $color1a;
+                                top: 70px;
+                                display: flex;
+                                flex-wrap: wrap;
+                                flex-direction: column;
+                                gap: 10px;
+
+                                @include notebook() {
+                                    top: 0;
+                                    left: 122px;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    .subMenuPrincipal {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        padding: 0 10px;
+        border-radius: 2px;
+        border: solid 2px $color5;
+        margin-left: auto;
+        gap: 15px;
+
+        @include notebook() {
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 81px;
+            left: 0px;
+        }
+
+        .carrito,
+        .likeWidget,
+        .userLogin,
+        .panelRoot,
+        .logout {
+            width: auto;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            a {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                text-decoration: none;
+                color: $color5;
+                font-weight: 600;
+                overflow: hidden;
+                font-size: 1.8rem;
+
+            }
+
+            p {
+                text-decoration: none;
+                font-size: 1.5rem;
+                color: $color5;
+                font-weight: 600;
+            }
+
+            img {
+                width: 30px;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid $color5;
+            }
+        }
+
+        // .panelRoot {
+        //     width: 40px;
+        //     height: 40px;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     align-items: center;
+        //     gap: 10px;
+        //     cursor: pointer;
+
+        //     a.panelConfig {
+        //         display: flex;
+        //         flex-wrap: nowrap;
+        //         flex-direction: row;
+        //         align-content: center;
+        //         align-items: center;
+        //         justify-content: center;
+        //         gap: 5px;
+        //         text-decoration: none;
+        //         font-size: 1.5rem;
+        //         color: $color5;
+        //         font-weight: 600;
+        //         overflow: hidden;
+        //         transition: .5s;
+
+        //         &.active {
+        //             color: red;
+        //         }
+        //     }
+
+
+        // }
+
+    }
+
+
+    @include notebook() {
+        height: 135px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        transition: height .7s ease-in-out;
+        overflow: hidden;
+        border-bottom: solid thin $color2;
+        width: 80%;
+
+        &.active {
+            height: 400px;
+            transition: .7s;
+            border-bottom: solid thin $color4;
+        }
+    }
+
+    @include tablets() {
+        width: 100%;
+    }
+
+}
+
+.subPaneles {
+    width: auto;
+    height: auto;
+    position: fixed;
+    gap: 10px;
+    // padding: 10px;
+    background-color: $color6;
+    border-radius: 2px;
+    z-index: 2;
+    display: flex;
+    top: 140px;
+
+    .login {
+        width: 300px;
+        height: auto;
+        border-radius: 2px;
+        top: 140px;
+        right: 100px;
+        background: $color6;
+        border: solid 2px $color3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        gap: 10px;
+        z-index: 2;
+        opacity: 0;
+        transition: .5s;
+        padding: 10px;
+
+        .formLogin {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            background-color: $color3;
+            border-radius: 2px;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            align-content: center;
+            gap: 10px;
+
+            h2 {
+                font-family: $tituloGeneral;
+                text-transform: capitalize;
+            }
+
+            input {
+                font-family: $parrafoGeneral;
+                font-weight: 600;
+                color: $color1a;
+                font-size: 1rem;
+                padding: 5px 10px;
+                border: solid 2px $color1a;
+                border-radius: 2px;
+                outline: none;
+
+                &::placeholder {
+                    font-family: $parrafoGeneral;
+                    color: $color5;
+                    text-transform: capitalize;
+                }
+            }
+            div{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                align-content: center;
+                gap: 20px;
+
+                .entrar {
+                    font-family: $tituloGeneral;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: $color4;
+                    background: $color6;
+                    text-transform: capitalize;
+                    padding: 8px 12px;
+                    border-radius: 2px;
+                    transition: .5s;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+    
+                    &:hover {
+                        color: $color6;
+                        background: $color4;
+                    }
+                }
+                .recuperar{
+                    font-family: $tituloGeneral;
+                    font-weight: 500;
+                    font-size: .9rem;
+                    color: $color1a;
+                    padding: 10px;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+
+        .loginGooogle {
+            font-family: $tituloGeneral;
+            font-weight: 500;
+            font-size: 1rem;
+            color: $color4;
+            background: $color6;
+            text-transform: capitalize;
+            padding: 8px 12px;
+            border-radius: 2px;
+            transition: .5s;
+            outline: none;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                color: $color6;
+                background: $color4;
+            }
+        }
+
+        .formRegister {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            background-color: $color3;
+            border-radius: 2px;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            align-content: center;
+            gap: 20px;
+
+            h2 {
+                font-family: $tituloGeneral;
+                text-transform: capitalize;
+            }
+            label{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-family: $tituloGeneral;
+                font-weight: 500;
+                color: $color1a;
+                font-size: 1.1rem;
+
+                input {
+                    font-family: $parrafoGeneral;
+                    font-weight: 600;
+                    color: $color1a;
+                    font-size: 1rem;
+                    padding: 5px 10px;
+                    border: solid 2px $color1a;
+                    border-radius: 2px;
+                    outline: none;
+    
+                    &::placeholder {
+                        font-family: $parrafoGeneral;
+                        color: $color5;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            .entrar {
+                font-family: $tituloGeneral;
+                font-weight: 500;
+                font-size: 1rem;
+                color: $color4;
+                background: $color6;
+                text-transform: capitalize;
+                padding: 8px 12px;
+                border-radius: 2px;
+                transition: .5s;
+                outline: none;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    color: $color6;
+                    background: $color4;
+                }
+            }
+            .error, .verificado{
+                width: 100%;
+                font-weight: 700;
+                height: auto;
+                font-family: $parrafoGeneral;
+                background: $color6;
+                font-weight: 1rem;
+                text-transform: capitalize;
+                border-radius: 2px;
+                padding: 5px;
+            }
+            .error{
+                color: $color7;
+            }
+            .verificado{
+                color: $color3;
+            }
+        }
+
+        a {
+            font-family: $parrafoGeneral;
+            text-transform: capitalize;
+
+            color: $color3;
+            font-size: .9rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    .panelSetting {
+        width: 300px;
+        height: 350px;
+        border-radius: 2px;
+        top: 140px;
+        background: $color6;
+        border: solid 2px $color3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        z-index: 2;
+        opacity: 0;
+        gap: 1rem;
+        transform: .7s;
+
+        h2 {
+            font-family: $tituloGeneral;
+            color: $color2;
+        }
+
+        .panels {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            gap: 8px;
+
+            a {
+                text-decoration: none;
+                width: auto;
+                height: auto;
+                padding: 5px;
+                display: flex;
+                justify-content: flex-start;
+                align-content: center;
+                align-items: center;
+                gap: 5px;
+                font-family: $parrafoGeneral;
+                color: $color2;
+                font-size: 1.1rem;
+                text-transform: capitalize;
+
+                ion-icon {
+                    color: $color4;
+                }
+            }
+        }
+
+        &.visible {
+            opacity: 1;
+            transition: .5s;
+        }
+    }
+}

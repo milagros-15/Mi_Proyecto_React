@@ -1,0 +1,14 @@
+.saludo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    h1{
+        font-family: $parrafoGeneral;
+        text-transform: capitalize;
+        font-size: 3rem;
+        font-weight: 700;
+        color: $color5;
+    }
+}

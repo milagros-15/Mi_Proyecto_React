@@ -1,0 +1,60 @@
+@mixin desktop(){
+    @media screen and (max-width:$xl){
+        @content;
+    }
+}
+@mixin notebook(){
+    @media screen and (max-width: $lg){
+        @content;
+    }
+}
+
+@mixin tablets(){
+    @media screen and (max-width: $md){
+        @content;
+    }
+}
+
+@mixin movile(){
+    @media screen and (max-width: $sm){
+        @content;
+    }
+}
+
+@mixin anchoGeneral(){
+    width: 90%;
+    max-width: 1700px;
+    margin: auto;
+
+    @media screen and (max-width: $xl){
+        width: 85%;
+    }
+    @media screen and (max-width: $lg){
+        width: 80%;
+    } 
+    @media screen and (max-width: $md){
+        width: 98%;
+    }
+    @media (max-width: $sm) {
+        width: 100%;
+    }
+}
+
+@mixin align_mid_grid(){
+    display: grid;
+    place-content: center;
+}
+@mixin align_mid_flex(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin left_right(){
+    &.left{
+        @include caja_flex(row-reverse, wrap, center, center, center);
+    }
+    &.right{
+        @include caja_flex(row, wrap, center, center, center);
+    }
+}

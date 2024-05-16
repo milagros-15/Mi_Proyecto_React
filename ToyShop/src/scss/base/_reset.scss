@@ -1,0 +1,27 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;  //scroll lento
+
+    &.sr .widget {
+        visibility: hidden;
+    }
+}
+
+body{
+    margin:0;
+    width: 100%;
+    height: 100%;
+    background: $color1a;
+    overflow-anchor: auto;
+
+    // height: 100vh;
+    // overflow-y: scroll;
+    // scroll-snap-type: mandatory;
+    // scroll-snap-type: y mandatory;
+}
